@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         :root {
+ --couleur-principale: rgb(255, 0, 195);
+ --couleur-secondaire: rgb(170, 0, 255);
+ --couleur-tertiaire: rgb(115, 0, 128);
+ --police-principale: Arial, sans-serif;
+ }
+body {
+    background-image: linear-gradient(var(--couleur-principale), var(--couleur-secondaire), var(--couleur-tertiaire));
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--police-principale);
+    text-align: center;
+}
+table{
+    width: 500px;
+    height: 500px;
+}
+.content{
+    text-align: center;
+    font-size:50px;
+    font-weight: 500;
+    color:var(--couleur-tertiaire) ;
+}
+div{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.color_span{
+    color: white;
+}
+td{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+}
+button {
+ width: 200px;
+ height: 35px;
+ color: white;
+ background-color: var(--couleur-principale);
+ border-radius: 10px;
+ border: none;
+ margin-top: 20px;
+ }
+ button:hover {
+ background-color: var(--couleur-secondaire);
+ }
+    </style>
+</head>
+<body>
+   <header> 
+    <h1><span>X</span>:<span>O</span></h1>
+    <a href="projet_XO.html"><button>reture</button></a>
+   </header>
+    <div>
+    <table border="1">
+        <tr>
+            <td id="id1"><p></p></td>
+            <td id="id2"><p></p></td>
+            <td id="id3"><p></p></td>
+        </tr>
+        <tr>
+            <td id="id4"><p></p></td>
+            <td id="id5"><p></p></td>
+            <td id="id6"><p></p></td>
+        </tr>
+        <tr>
+            <td id="id7"><p></p></td>
+            <td id="id8"><p></p></td>
+            <td id="id9"><p></p></td>
+        </tr>
+    </table>
+</div>
+    <script>
+        let td=document.querySelectorAll("td")
+        let p=document.querySelectorAll("p")
+        let span=document.querySelectorAll("span")
+        let click=true
+        let titre=document.querySelector("h1")
+        let table_item=[]
+        function end(n1,n2,n3){
+            document.getElementById("id"+n1).style.backgroundColor="rgb(255, 0, 195)";
+               document.getElementById("id"+n2).style.backgroundColor="rgb(255, 0, 195)";
+               document.getElementById("id"+n3).style.backgroundColor="rgb(255, 0, 195)";
+               document.getElementById("id"+n1).style.color="white";
+               document.getElementById("id"+n2).style.color="white";
+               document.getElementById("id"+n3).style.color="white";
+               titre.innerHTML=`${table_item[n1]} filicitation!!`;
+               setTimeout(function(){
+                  location.reload();
+               },3000)
+        }
+        function filicitation(){
+            for(let i=1;i<10;i++){
+                table_item[i]=document.getElementById("id"+i).textContent
+            }
+            if(table_item[1]==table_item[2] && table_item[2]==table_item[3] && table_item[1]!=""){
+                end(1,2,3)
+                
+            }else if(table_item[4]==table_item[5] && table_item[5]==table_item[6] && table_item[4]!=""){
+                end(4,5,6)
+
+            }else if(table_item[7]==table_item[8] && table_item[8]==table_item[9] && table_item[7]!=""){
+                end(7,8,9)
+
+            }else if(table_item[1]==table_item[4] && table_item[4]==table_item[7] && table_item[7]!=""){
+                end(1,4,7)
+               
+            }else if(table_item[2]==table_item[5] && table_item[5]==table_item[8] && table_item[2]!=""){
+                end(2,5,8)
+
+            }else if(table_item[3]==table_item[6] && table_item[6]==table_item[9] && table_item[6]!=""){
+                end(3,6,9)
+
+            }else if(table_item[1]==table_item[5] && table_item[5]==table_item[9] && table_item[5]!=""){
+                end(1,5,9)
+                
+            }else if(table_item[3]==table_item[5] && table_item[5]==table_item[7] && table_item[3]!=""){
+                end(3,5,7)
+                
+            }
+            
+        }
+        td.forEach(col=>
+            col.addEventListener("click",()=>{
+                if(click==true && col.textContent==""){
+                    col.textContent="X"
+                    col.classList.add("content")
+                    click=false
+                    span[0].classList.remove("color_span")
+                    span[1].classList.add("color_span")
+                }else if(click==false && col.textContent==""){
+                    col.textContent="O"
+                    col.classList.add("content")
+                    click=true
+                    span[1].classList.remove("color_span")
+                    span[0].classList.add("color_span")
+                }
+                filicitation()
+            } )    
+        )
+    </script>
+</body>
+</html>
