@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        :root {
- --couleur-principale: rgb(255, 0, 195);
- --couleur-secondaire: rgb(170, 0, 255);
- --couleur-tertiaire: rgb(115, 0, 128);
- --police-principale: Arial, sans-serif;
- }
+    
+
+:root {
+    --couleur-principale: #003366; /* Bleu foncé */
+    --couleur-secondaire: #e6f0ff; /* Bleu très clair */
+    --couleur-tertiaire: #336699; /* Bleu moyen */
+    --police-principale: Arial, sans-serif;
+}
 
  ul {
  display: flex;
@@ -37,7 +39,7 @@
  }
 
  body {
- background-image: linear-gradient(var(--couleur-principale), var(--couleur-secondaire), var(--couleur-tertiaire));
+ background-color: rgba(140, 219, 239, 0.683);
  background-repeat: no-repeat;
  width: 100%;
  height: 100vh;
@@ -52,25 +54,27 @@
  border-radius: 10px;
  border: none;
  margin-top: 50px;
+  cursor: pointer;
  }
  button:hover {
- background-color: var(--couleur-secondaire);
- }
-
+    background-color: var(--couleur-tertiaire);
+}
  span {
  font-size: x-large;
  margin-left: 20px;
  color: rgb(7, 82, 6);
  }
 
-
+input[type="checkbox"] {
+    accent-color: var(--couleur-principale);
+}
 
     </style>
 </head>
 <body>
     <header>
         <ul>
-            <li><img src="images.jfif" alt="logo"></li>
+            <li><img src="image.png" alt="logo"></li>
             <li><h1>Jouer X-O</h1></li>
             <li></li>
         </ul>

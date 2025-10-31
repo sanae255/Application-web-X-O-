@@ -6,66 +6,75 @@
     <title>Document</title>
     <style>
          :root {
- --couleur-principale: rgb(255, 0, 195);
- --couleur-secondaire: rgb(170, 0, 255);
- --couleur-tertiaire: rgb(115, 0, 128);
- --police-principale: Arial, sans-serif;
- }
-body {
-    background-image: linear-gradient(var(--couleur-principale), var(--couleur-secondaire), var(--couleur-tertiaire));
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
-    font-family: var(--police-principale);
-    text-align: center;
+    --couleur-principale: #003366; /* Bleu foncé */
+    --couleur-secondaire: #e6f0ff; /* Bleu très clair */
+    --couleur-tertiaire: #336699; /* Bleu moyen */
+    --police-principale: Arial, sans-serif;
 }
-table{
-    width: 500px;
-    height: 500px;
-}
-.content{
-    text-align: center;
-    font-size:50px;
-    font-weight: 500;
-    color:var(--couleur-tertiaire) ;
-}
-div{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.color_span{
-    color: white;
-}
-td{
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-}
-header{
-    display: flex;
-    justify-content: space-evenly;
-}
-button {
- width: 200px;
- height: 35px;
- color: white;
- background-color: var(--couleur-principale);
- border-radius: 10px;
- border: none;
- margin-top: 20px;
- }
- button:hover {
- background-color: var(--couleur-secondaire);
- }
+        body {
+           background-color: rgba(140, 219, 239, 0.683);
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            font-family: var(--police-principale);
+            text-align: center;
+        }
+
+        table {
+            width: 500px;
+            height: 500px;
+        }
+
+        .content {
+            text-align: center;
+            font-size: 50px;
+            font-weight: 500;
+            color: var(--couleur-principale);
+        }
+
+        div {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .color_span {
+            color: var(--couleur-principale);
+        }
+
+        td {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        button {
+            width: 200px;
+            height: 35px;
+            color: white;
+            background-color: var(--couleur-principale);
+            border-radius: 10px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--couleur-tertiaire);
+        }
     </style>
 </head>
 <body>
    <header> 
     <h1><span>X</span>:<span>O</span></h1>
-    <a href="projet_XO.html"><button>reture</button></a>
+    <a href="index.html"><button>reture</button></a>
    </header>
     <div>
     <table border="1">
@@ -94,9 +103,9 @@ button {
         let titre=document.querySelector("h1")
         let table_item=[]
         function end(n1,n2,n3){
-            document.getElementById("id"+n1).style.backgroundColor="rgb(255, 0, 195)";
-               document.getElementById("id"+n2).style.backgroundColor="rgb(255, 0, 195)";
-               document.getElementById("id"+n3).style.backgroundColor="rgb(255, 0, 195)";
+            document.getElementById("id"+n1).style.backgroundColor="var(--couleur-principale)";
+               document.getElementById("id"+n2).style.backgroundColor="var(--couleur-principale)";
+               document.getElementById("id"+n3).style.backgroundColor="var(--couleur-principale)";
                document.getElementById("id"+n1).style.color="white";
                document.getElementById("id"+n2).style.color="white";
                document.getElementById("id"+n3).style.color="white";
